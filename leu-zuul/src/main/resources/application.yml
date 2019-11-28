@@ -1,0 +1,20 @@
+server:
+  port: 10010
+
+spring:
+  application:
+    name: leu-zuul
+
+zuul:
+  routes:
+    leu-provider: /leu-provider/** #路由名称
+    leu-consumer: /leu-consumer/** #路由名称
+  prefix: /api #zuul网关前缀
+#      path: /leu-provider/** #路由路径 #第二种配置方式
+#      serviceId: leu-provider #第二种配置方式
+#      url: http://localhost:8081 #第一种配置方式
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka/
